@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-dark-950 text-white font-sans;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-electric-blue via-electric-green to-electric-purple bg-clip-text text-transparent;
+  }
+  
+  .glass-effect {
+    @apply backdrop-blur-md bg-white/10 border border-white/20;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-electric-blue/20;
+  }
+  
+  .button-primary {
+    @apply bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-primary-500/25;
+  }
+  
+  .button-secondary {
+    @apply bg-transparent border-2 border-electric-blue text-electric-blue hover:bg-electric-blue hover:text-dark-950 font-semibold py-3 px-6 rounded-lg transition-all duration-300;
+  }
+  
+  .section-padding {
+    @apply py-20 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+  }
+  
+  .text-glow-teal {
+    text-shadow: 0 0 12px #069494, 0 0 24px #06949499;
+  }
+  
+  @keyframes glow-spark {
+    0% {
+      text-shadow: 0 0 0px #069494, 0 0 0px #06949499;
+      opacity: 0.7;
+    }
+    10% {
+      text-shadow: 0 0 24px #fff, 0 0 48px #fff, 0 0 32px #069494, 0 0 64px #069494cc;
+      opacity: 1;
+    }
+    20% {
+      text-shadow: 0 0 32px #069494, 0 0 64px #069494cc;
+      opacity: 1;
+    }
+    30% {
+      text-shadow: 0 0 16px #069494, 0 0 32px #06949499;
+      opacity: 0.95;
+    }
+    40% {
+      text-shadow: 0 0 24px #fff, 0 0 48px #fff, 0 0 32px #069494, 0 0 64px #069494cc;
+      opacity: 1;
+    }
+    50% {
+      text-shadow: 0 0 32px #069494, 0 0 64px #069494cc;
+      opacity: 1;
+    }
+    100% {
+      text-shadow: 0 0 12px #069494, 0 0 24px #06949499;
+      opacity: 1;
+    }
+  }
+
+  .animate-glow-spark {
+    animation: glow-spark 1.2s cubic-bezier(0.4,0,0.2,1) 1;
+  }
+} 
