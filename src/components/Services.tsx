@@ -142,7 +142,10 @@ const Services: React.FC = () => {
 
               {/* CTA */}
               <div className="flex items-center justify-between">
-                <button className="text-electric-blue hover:text-electric-green transition-colors duration-300 font-medium text-sm">
+                <button 
+                  onClick={() => document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="text-electric-blue hover:text-electric-green transition-colors duration-300 font-medium text-sm px-4 py-2 rounded-lg hover:bg-electric-blue/10 h-10"
+                >
                   Learn More
                 </button>
                 <ArrowRight className="w-4 h-4 text-electric-blue group-hover:translate-x-1 transition-transform duration-300" />
@@ -169,10 +172,16 @@ const Services: React.FC = () => {
               We specialize in building tailored solutions that perfectly fit your unique requirements
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="button-primary">
+              <button 
+                onClick={() => document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' })}
+                className="button-primary px-8 py-3 h-12 w-full sm:w-auto"
+              >
                 Get Custom Quote
               </button>
-              <button className="button-secondary">
+              <button 
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="button-secondary px-8 py-3 h-12 w-full sm:w-auto"
+              >
                 Schedule Consultation
               </button>
             </div>

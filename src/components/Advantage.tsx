@@ -86,7 +86,7 @@ const Advantage: React.FC = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Pain Points */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -102,7 +102,7 @@ const Advantage: React.FC = () => {
                   initial={{ opacity: 0, x: -20 }}
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                  className="flex items-start space-x-4 p-6 glass-effect rounded-xl"
+                  className="flex items-start space-x-4 p-6 glass-effect rounded-xl h-32"
                 >
                   <div className={`p-3 rounded-lg bg-dark-800 ${point.color}`}>
                     <point.icon className="w-6 h-6" />
@@ -123,7 +123,7 @@ const Advantage: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="space-y-8"
           >
-            <h3 className="text-2xl font-bold text-white mb-8">The Devploy Advantage</h3>
+            <h3 className="text-2xl font-bold text-white mb-8">The <span className="gradient-text">Devploy</span> Advantage</h3>
             <div className="space-y-6">
               {solutions.map((solution, index) => (
                 <motion.div
@@ -131,7 +131,7 @@ const Advantage: React.FC = () => {
                   initial={{ opacity: 0, x: 20 }}
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
-                  className="flex items-start space-x-4 p-6 glass-effect rounded-xl border border-electric-blue/20"
+                  className="flex items-start space-x-4 p-6 glass-effect rounded-xl border border-electric-blue/20 h-32"
                 >
                   <div className={`p-3 rounded-lg bg-dark-800 ${solution.color}`}>
                     <solution.icon className="w-6 h-6" />
@@ -161,10 +161,16 @@ const Advantage: React.FC = () => {
               Join hundreds of startups that have accelerated their growth with Devploy
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="button-primary">
+              <button 
+                onClick={() => document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' })}
+                className="button-primary px-8 py-3 h-12 w-full sm:w-auto"
+              >
                 Calculate Your Savings
               </button>
-              <button className="button-secondary">
+              <button 
+                onClick={() => document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth' })}
+                className="button-secondary px-8 py-3 h-12 w-full sm:w-auto"
+              >
                 View Case Studies
               </button>
             </div>

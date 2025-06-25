@@ -91,7 +91,8 @@ const Hero: React.FC = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="button-primary flex items-center space-x-2"
+              onClick={() => document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' })}
+              className="button-primary flex items-center space-x-2 px-8 py-3 h-12 w-full sm:w-auto"
             >
               <Calculator className="w-5 h-5" />
               <span>Calculate Your Launch Advantage</span>
@@ -100,7 +101,8 @@ const Hero: React.FC = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="button-secondary flex items-center space-x-2"
+              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+              className="button-secondary flex items-center space-x-2 px-8 py-3 h-12 w-full sm:w-auto"
             >
               <Play className="w-5 h-5" />
               <span>Explore Our Solutions</span>
@@ -112,32 +114,33 @@ const Hero: React.FC = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="text-electric-blue hover:text-electric-green transition-colors duration-300 font-medium flex items-center space-x-2 mx-auto"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="text-electric-blue hover:text-electric-green transition-colors duration-300 font-medium flex items-center space-x-2 mx-auto px-6 py-3 h-12 rounded-lg hover:bg-electric-blue/10"
             >
               <span>Book a Free Consultation</span>
               <ArrowRight className="w-4 h-4" />
             </motion.button>
-          </div>
-        </motion.div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 1 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="w-6 h-10 border-2 border-electric-blue rounded-full flex justify-center"
-          >
+            
+            {/* Horizontal Scroll Indicator */}
             <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="w-1 h-3 bg-electric-blue rounded-full mt-2"
-            />
-          </motion.div>
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1, duration: 1 }}
+              className="mt-6 flex justify-center"
+            >
+              <motion.div
+                animate={{ x: [0, 10, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="h-6 w-10 border-2 border-electric-blue rounded-full flex items-center justify-center"
+              >
+                <motion.div
+                  animate={{ x: [0, 8, 0] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  className="h-1 w-3 bg-electric-blue rounded-full"
+                />
+              </motion.div>
+            </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>

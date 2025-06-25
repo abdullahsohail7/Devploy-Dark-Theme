@@ -81,8 +81,9 @@ const Contact: React.FC = () => {
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
+            className="h-full"
           >
-            <div className="glass-effect rounded-2xl p-8">
+            <div className="glass-effect rounded-2xl p-8 h-full">
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
                 <MessageSquare className="w-6 h-6 mr-3 text-electric-blue" />
                 Start Your Project
@@ -176,23 +177,24 @@ const Contact: React.FC = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="space-y-8"
+            className="h-full flex flex-col justify-between"
           >
-            {/* Contact Info Cards */}
-            <div className="space-y-6">
+            {/* All Cards Container */}
+            <div className="flex flex-col h-full space-y-4">
+              {/* Contact Info Cards */}
               {contactInfo.map((info, index) => (
                 <motion.div
                   key={info.title}
                   initial={{ opacity: 0, y: 20 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
-                  className="glass-effect rounded-2xl p-6 border border-gray-700 hover:border-electric-blue/30 transition-all duration-300"
+                  className="glass-effect border border-gray-700 hover:border-electric-blue/30 transition-all duration-300 rounded-2xl flex-1"
                 >
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-electric-blue to-electric-green rounded-xl flex items-center justify-center">
+                  <div className="flex items-center space-x-4 h-full p-6">
+                    <div className="w-12 h-12 bg-gradient-to-br from-electric-blue to-electric-green rounded-xl flex items-center justify-center flex-shrink-0">
                       <info.icon className="w-6 h-6 text-dark-950" />
                     </div>
-                    <div>
+                    <div className="flex-1">
                       <h4 className="text-lg font-semibold text-white mb-1">{info.title}</h4>
                       <p className="text-electric-blue font-medium mb-1">{info.value}</p>
                       <p className="text-gray-400 text-sm">{info.description}</p>
@@ -200,41 +202,21 @@ const Contact: React.FC = () => {
                   </div>
                 </motion.div>
               ))}
-            </div>
 
-            {/* Additional Info */}
-            <div className="glass-effect rounded-2xl p-8">
-              <h3 className="text-xl font-bold text-white mb-4">Why Choose Devploy?</h3>
-              <div className="space-y-3">
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-electric-blue rounded-full" />
-                  <span className="text-gray-300">Free initial consultation</span>
+              {/* Response Time */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.9 }}
+                className="glass-effect rounded-2xl border border-electric-green/30 flex-1"
+              >
+                <div className="flex items-center justify-center h-full p-6">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-electric-green mb-2">24 Hours</div>
+                    <div className="text-gray-300">Average response time</div>
+                  </div>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-electric-blue rounded-full" />
-                  <span className="text-gray-300">Transparent pricing</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-electric-blue rounded-full" />
-                  <span className="text-gray-300">Expert team access</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-electric-blue rounded-full" />
-                  <span className="text-gray-300">Rapid delivery</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-electric-blue rounded-full" />
-                  <span className="text-gray-300">Ongoing support</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Response Time */}
-            <div className="glass-effect rounded-2xl p-6 border border-electric-green/30">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-electric-green mb-2">24 Hours</div>
-                <div className="text-gray-300">Average response time</div>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>

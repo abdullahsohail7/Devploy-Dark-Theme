@@ -45,7 +45,10 @@ const Navbar: React.FC = () => {
                 {item.name}
               </a>
             ))}
-            <button className="button-primary">
+            <button 
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="button-primary h-10 px-6 flex justify-center items-center"
+            >
               Get Started
             </button>
           </div>
@@ -75,7 +78,10 @@ const Navbar: React.FC = () => {
                   {item.name}
                 </a>
               ))}
-              <button className="button-primary w-full mt-4">
+              <button 
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="button-primary w-full mt-4 h-12 flex justify-center items-center"
+              >
                 Get Started
               </button>
             </div>
