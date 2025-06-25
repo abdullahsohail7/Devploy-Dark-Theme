@@ -58,7 +58,7 @@ const Expertise: React.FC = () => {
     { number: "50+", label: "Projects Delivered", icon: Award },
     { number: "95%", label: "Client Satisfaction", icon: Star },
     { number: "3x", label: "Faster Development", icon: Code },
-    { number: "40%", label: "Cost Reduction", icon: BarChart3 }
+    { number: "40%", label: "Estimated Cost Reduction", icon: BarChart3 }
   ]
 
   return (
