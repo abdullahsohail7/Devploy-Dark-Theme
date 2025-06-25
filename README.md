@@ -186,4 +186,4 @@ For support, email hello@synergysphere.com or create an issue in the repository.
 
 ---
 
-**SynergySphere** - Launch faster, scale smarter, achieve more. 
+**SynergySphere** - Launch faster, scale smarter, achieve more. # Devploy-Dark
