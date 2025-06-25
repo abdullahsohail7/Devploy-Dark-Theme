@@ -1,7 +1,7 @@
 {
   "name": "devploy-website",
   "version": "1.0.0",
-  "description": "SynergySphere - Launch faster, scale smarter, achieve more",
+  "description": "Devploy - Launch faster, scale smarter, achieve more",
   "main": "index.js",
   "scripts": {
     "dev": "vite",
